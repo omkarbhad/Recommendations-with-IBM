@@ -6,23 +6,25 @@ This repository contains an article recommendation engine built using interactio
 
 ## 🎥 Demo
 
-![SVD Recommendation System Demo](demo_svd.gif)
+[View Demo GIF](demo_svd.gif) (13MB)
+
+*Note: The GIF is large and may take a moment to load. For a smoother experience, you can download it and view it locally.*
 
 ---
 
 ## 📌 Table of Contents
 
-* [Introduction](#introduction)
-* [Dataset](#dataset)
-* [Recommendation Methods](#recommendation-methods)
-* [Features](#features)
-* [Project Structure](#project-structure)
-* [Installation](#installation)
-* [Quick Start](#quick-start)
-* [Web Application](#web-application)
-* [Demo](#demo)
-* [Acknowledgements](#acknowledgements)
-* [License](#license)
+- [🎥 Demo](#-demo)
+- [🧩 Introduction](#-introduction)
+- [📊 Dataset](#-dataset)
+- [🎯 Recommendation Methods](#-recommendation-methods)
+- [🚀 Features](#-features)
+- [🗂️ Project Structure](#%EF%B8%8F-project-structure)
+- [⚙️ Installation](#%EF%B8%8F-installation)
+- [⚡ Quick Start](#-quick-start)
+- [🌐 Web Application](#-web-application)
+- [🙏 Acknowledgements](#-acknowledgements)
+- [📄 License](#-license)
 
 ---
 
