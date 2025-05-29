@@ -6,9 +6,7 @@ This repository contains an article recommendation engine built using interactio
 
 ## 🎥 Demo
 
-[View Demo GIF](demo_svd.gif) (13MB)
-
-*Note: The GIF is large and may take a moment to load. For a smoother experience, you can download it and view it locally.*
+![SVD Recommendation System Demo](demo_svd.gif)
 
 ---
 
