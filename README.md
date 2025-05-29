@@ -100,6 +100,8 @@ svd-recommendation-engine/
 
 ## ⚡ Quick Start
 
+### Running the Web App
+
 Clone the repository and run the app:
 
 ```bash
@@ -107,12 +109,12 @@ git clone https://github.com/omkarbhad/svd-recommendation-engine.git
 cd svd-recommendation-engine
 pip install -r requirements.txt
 unzip user_item_matrix.zip
+jupyter nbconvert --execute --to notebook --inplace Recommendations_with_IBM.ipynb
 streamlit run app.py
 ```
 
 Then visit: [http://localhost:8501](http://localhost:8501)
 
----
 
 ## 🌐 Web Application
 
