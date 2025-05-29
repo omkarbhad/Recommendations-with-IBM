@@ -1,32 +1,144 @@
-# &middot; Recommondations-with-IBM &middot;
+# SVD-based Article Recommendation System
 
-## &middot; Introduction &middot;
+This repository contains an article recommendation engine built using interaction data from the IBM Watson Studio platform. It implements several machine learning techniques—including **Singular Value Decomposition (SVD)**—to provide personalized article recommendations based on user behavior.
 
-For this project you will analyze the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them about new articles you think they will like. Below you can see an example of what the dashboard could look like displaying articles on the IBM Watson Platform.
+---
 
-Though the above dashboard is just showing the newest articles, you could imagine having a recommendation board available here that shows the articles that are most pertinent to a specific user.
+## 🎥 Demo
 
-In order to determine which articles to show to each user, you will be performing a study of the data available on the IBM Watson Studio platform. You can create your own account to become a part of their community, and get a better understanding of their data by creating an account on the platform here.
-Your Tasks
+![SVD Recommendation System Demo](demo_svd.gif)
 
-Your project will be divided into the following tasks:
+---
 
-### I. Exploratory Data Analysis
+## 📌 Table of Contents
 
-Before making recommendations of any kind, you will need to explore the data you are working with for the project. Dive in to see what you can find. There are some basic, required questions to be answered about the data you are working with throughout the rest of the notebook. Use this space to explore, before you dive into the details of your recommendation system in the later sections.
+* [Introduction](#introduction)
+* [Dataset](#dataset)
+* [Recommendation Methods](#recommendation-methods)
+* [Features](#features)
+* [Project Structure](#project-structure)
+* [Installation](#installation)
+* [Quick Start](#quick-start)
+* [Web Application](#web-application)
+* [Demo](#demo)
+* [Acknowledgements](#acknowledgements)
+* [License](#license)
 
-### II. Rank Based Recommendations
+---
 
-To get started in building recommendations, you will first find the most popular articles simply based on the most interactions. Since there are no ratings for any of the articles, it is easy to assume the articles with the most interactions are the most popular. These are then the articles we might recommend to new users (or anyone depending on what we know about them).
+## 🧩 Introduction
 
-### III. User-User Based Collaborative Filtering
+This project explores user-article interactions to generate personalized article recommendations. It supports multiple strategies—from simple popularity-based methods to matrix factorization techniques—and includes an interactive **Streamlit web app** for demonstration and exploration.
 
-In order to build better recommendations for the users of IBM's platform, we could look at users that are similar in terms of the items they have interacted with. These items could then be recommended to the similar users. This would be a step in the right direction towards more personal recommendations for the users. You will implement this next.
+---
 
-### IV. Content Based Recommendations (EXTRA - NOT REQUIRED)
+## 📊 Dataset
 
-Given the amount of content available for each article, there are a number of different ways in which someone might choose to implement a content based recommendations system. Using your NLP skills, you might come up with some extremely creative ways to develop a content based recommendation system. You are encouraged to complete a content based recommendation system, but not required to do so to complete this project.
+The system uses the following datasets:
 
-### V. Matrix Factorization
+* `user-item-interactions.csv`: Logs of user interactions with articles.
+* `articles_community.csv`: Metadata for each article, including title and description.
 
-Finally, you will complete a machine learning approach to building recommendations. Using the user-item interactions, you will build out a matrix decomposition. Using your decomposition, you will get an idea of how well you can predict new articles an individual might interact with (spoiler alert - it isn't great). You will finally discuss which methods you might use moving forward, and how you might test how well your recommendations are working for engaging users.
+---
+
+## 🎯 Recommendation Methods
+
+The project implements the following recommendation strategies:
+
+* **Rank-Based Recommendations**
+  Suggests the most popular articles overall.
+
+* **User-User Collaborative Filtering**
+  Recommends articles based on similar users' preferences.
+
+* **Content-Based Filtering**
+  Uses TF-IDF on article descriptions to recommend similar articles.
+
+* **Matrix Factorization (SVD)**
+  Predicts user-article interactions using latent features learned from the interaction matrix.
+
+---
+
+## 🚀 Features
+
+* Personalized article recommendations.
+* Multiple algorithmic approaches for comparison.
+* Streamlit web interface for easy interaction.
+* Notebook analysis with HTML export for review.
+
+---
+
+## 🗂️ Project Structure
+
+```
+svd-recommendation-engine/
+├── app.py                         # Streamlit web app
+├── project_tests.py              # Unit tests
+├── README.md                     # Project documentation
+├── requirements.txt              # Python dependencies
+├── data/
+│   ├── articles_community.csv
+│   └── user-item-interactions.csv
+├── top_5.p                       # Top-5 recommendation model
+├── top_10.p                      # Top-10 recommendation model
+├── top_20.p                      # Top-20 recommendation model
+├── user_item_matrix.zip          # Pickled matrix (used for SVD)
+├── Recommendations_with_IBM.ipynb # Main Jupyter Notebook
+└── Recommendations_with_IBM.html  # Notebook HTML version
+```
+
+---
+
+## ⚙️ Installation
+
+### Requirements
+
+* Python 3.8 or later
+* `pip` (Python package manager)
+
+---
+
+## ⚡ Quick Start
+
+Clone the repository and run the app:
+
+```bash
+git clone https://github.com/omkarbhad/svd-recommendation-engine.git
+cd svd-recommendation-engine
+pip install -r requirements.txt
+unzip user_item_matrix.zip
+streamlit run app.py
+```
+
+Then visit: [http://localhost:8501](http://localhost:8501)
+
+---
+
+## 🌐 Web Application
+
+### 🔹 Home Page
+
+* Enter a user ID (1–5148) and choose a recommendation model.
+* View top-N personalized recommendations.
+
+### 🔹 Browse Articles
+
+* Select any article and get content-based similar suggestions.
+
+### 🔹 Notebook Explorer
+
+* Read the full analysis in the HTML-exported Jupyter notebook.
+
+---
+
+## 🙏 Acknowledgements
+
+* **Udacity** – Data Scientist Nanodegree Program
+* **IBM** – For the dataset and project foundation
+* **Streamlit** – For the interactive app framework
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
